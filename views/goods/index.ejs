@@ -1,0 +1,12 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <h3>Store Goods Information</h3> 
+   <!--<form method="GET" action="/goods/new">
+    <button>Create New Goods</button>
+   </form>-->
+     <ul> 
+   <% for (let goods of allGoods) { %> 
+   <li><a href="/goods/<%= goods._id %>"> <%= goods.name %> </a></li>
+   <% } %>
+   </ul>
+ </body>

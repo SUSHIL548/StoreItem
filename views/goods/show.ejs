@@ -1,0 +1,24 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+     <h2>Goods Details :</h2>
+     <ul>
+        <li><%= goods.name %> </li>
+         <li><%= goods.category %> </li>
+          <li><%= goods.brand %> </li>
+           <li><%= goods.description %> </li>
+            <li> &#8377; <%= goods.price.toLocaleString("en-IN") %> </li>
+             <li><%= goods.stock %> </li>
+              <li><%= goods.image %> </li>
+               <li><%= goods.createdAt %> </li>
+    </ul>
+    
+    <br/>
+    <a href="/goods/<%= goods._id %>/edit" class="btn btn-dark col-1 offset-3">Edit your Goods</a>
+
+    <form method="POST" action="/goods/<%=goods._id%>?_method=DELETE">
+   <button class="btn btn-dark offset-5 ">Delete your Goods</button>
+   <br/><br/>
+   </form>
+
+</body>
+

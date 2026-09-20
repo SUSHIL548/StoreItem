@@ -1,0 +1,46 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+     <h2>Edit your Goods</h2>
+    <form method="POST" action="/goods/<%= goods._id %>?_method=PUT">
+         <div class="mb-3">
+           <label for="name" class="form-label">Name</label>
+        <input name="goods[name]" value="<%= goods.name %>" type="text" class="form-control" required/>
+        </div>
+
+         <div class="mb-3">
+             <label for="category" class="form-label">Category</label>
+        <input name="goods[category]"  value="<%= goods.category %>" type="text" class="form-control" required/>
+        </div>
+
+        <div class="mb-3">
+             <label for="brand" class="form-label">Brand</label>
+            <input name="goods[brand]"  value="<%= goods.brand %>" type="text"  class="form-control" required/>
+        </div>
+     
+       <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+        <textarea name="goods[description]" class="form-control"><%= goods.description %></textarea>
+        </div>
+      
+        <div class="row">
+        <div class="mb-3 col-6">
+             <label for="price" class="form-label">Price</label>
+        <input name="goods[price]" value="<%= goods.price %>" type="number" class="form-control"/>
+        </div>
+
+        <div class="mb-3 col-6">
+          <label for="stock" class="form-label">Stock</label>
+        <input name="goods[stock]"  value="<%= goods.stock %>" type="number" class="form-control" />
+        </div>
+</div>
+
+     
+        <div class="mb-3">
+        <label for="image" class="form-label">Edit Image</label>
+        <input name="goods[image]" type="file" class="form-control"/>
+        <br /> <br />
+        <button class="btn btn-dark">Update Goods Information</button>
+    </form>
+</body>
+</html>
+
